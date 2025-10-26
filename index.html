@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Change Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Digital Change Management Dashboard</h1>
+    </header>
+    <main class="dashboard-grid">
+        <div class="card">
+            <h3>Adoption Rate</h3>
+            <p id="adoption-rate" class="metric">Loading...</p>
+        </div>
+        <div class="card">
+            <h3>Readiness Score</h3>
+            <p id="readiness-score" class="metric">Loading...</p>
+        </div>
+
+        <div class="card card-large">
+            <h3>Feedback Sentiment</h3>
+            <div class="chart-container">
+                <canvas id="sentimentChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card card-large">
+            <h3>Adoption Over Time</h3>
+            <div class="chart-container">
+                <canvas id="adoptionChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
